@@ -1,7 +1,7 @@
 #include <Servo.h>
 
-#define irReceiver 7
-#define servomotorPinout 9
+#define irReceiver 12
+#define servomotorPinout 11
 
 Servo myservo;  // crea el objeto servo
 
@@ -57,23 +57,21 @@ void powerUpRoutine(int attempt, bool &done)
     case 1:
       myservo.write(10);
       delay(1000);
-      moveServo(1, 180, 2); //from, to , speed
-      delay(260);
-      moveServo(1, 179, 1);
-      delay(250);
+      moveServo(10, 175, 2); //from, to , speed
+      delay(300);
       myservo.write(10);
       break;
     case 2:
       myservo.write(10);
       delay(1000);
-      moveServo(1, 180, 3);
-      delay(300);
+      moveServo(10, 176, 3);
+      delay(325);
       myservo.write(10);
       break;
     default: //3 attempts for now
       myservo.write(10);
       delay(1000);
-      moveServo(1, 180, 5);
+      moveServo(10, 177, 5);
       delay(350);
       myservo.write(10);
       done = true; /*default case is the last attempt so we are going to break the
